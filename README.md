@@ -1,273 +1,123 @@
-# Protesto Platformu
+# Protest & Boycott Platform
 
-Bu proje, toplumsal protestoları paylaşmak ve desteklemek için oluşturulmuş bir web uygulamasıdır.
+Hey!   
+This is a simple web app where people can **share, vote, and talk about protests or boycotts**. I built it to help people come together and speak up about important topics.
 
-## Proje Özellikleri
+---
 
-- Protesto oluşturma, görüntüleme ve oylama
-- Kullanıcı kayıt ve giriş sistemi
-- Protestoları kategorilere göre filtreleme
-- Protestolara yorum yapma
-- Protestoları paylaşma
-- Şikayet mekanizması
+## Features
 
-## Kurulum ve Çalıştırma
+- Create protests or boycotts
+- Vote and comment on them
+- Register and login with Firebase
+- Filter protests by category
+- Share protest links
+- Report inappropriate content
 
-### Gereksinimler
+---
 
-- Node.js (v14 veya üzeri)
-- npm veya yarn
-- Firebase hesabı
+### Requirements
 
-### Yerel Kurulum
+- Node.js (v14+)
+- npm or yarn
+- A Firebase project/account
 
-1. Projeyi klonlayın:
+### Setup
+
 ```bash
-git clone https://github.com/username/protesto-platformu.git
-cd protesto-platformu
-```
+# 1. Clone the repository
+git clone https://github.com/your-username/protest-platform.git
+cd protest-platform
 
-2. Bağımlılıkları yükleyin:
-```bash
+# 2. Install all dependencies
 npm install
-# veya
+# or
 yarn install
-```
 
-3. `.env.example` dosyasını `.env` olarak kopyalayın ve Firebase yapılandırmanızı ekleyin:
-```bash
+# 3. Copy the example environment file
 cp .env.example .env
-```
-
-4. `.env` dosyasını düzenleyin ve Firebase bilgilerinizi ekleyin:
-```
+Add your Firebase config to .env:
+env
+Kopyala
+Düzenle
 REACT_APP_FIREBASE_API_KEY=your-api-key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your-app.firebaseapp.com
 REACT_APP_FIREBASE_PROJECT_ID=your-project-id
 REACT_APP_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
 REACT_APP_FIREBASE_APP_ID=your-app-id
-```
-
-5. Uygulamayı geliştirme modunda çalıştırın:
-```bash
+bash
+Kopyala
+Düzenle
+# 4. Run the development server
 npm start
-# veya
+# or
 yarn start
-```
+Then open http://localhost:3000 in your browser!
 
-6. Uygulama varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.
-
-### Firebase'e Deploy Etme
-
-1. Firebase CLI'yi yükleyin (eğer daha önce yüklemediyseniz):
-```bash
+Deploy to your Firebase
+# 1. Install Firebase CLI
 npm install -g firebase-tools
-```
 
-2. Google hesabınız ile giriş yapın:
-```bash
+# 2. Log in to Firebase
 firebase login
-```
 
-3. Projenizi initialize edin (ilk kez deploy ediyorsanız):
-```bash
+# 3. Initialize project
 firebase init
-```
-   - Firestore, Hosting ve Storage seçeneklerini seçin
-   - Firebase projenizi seçin veya yeni bir proje oluşturun
-   - `build` klasörünü public directory olarak belirtin
-   - Single-page app sorusuna "Yes" yanıtını verin
+# Choose: Hosting, Firestore, and Storage
+# Set "build" as public directory
+# Choose "yes" for SPA
 
-4. Uygulamayı build alın ve deploy edin:
-```bash
-npm run deploy
-```
-
-5. Deploy tamamlandığında, uygulama belirtilen Firebase hosting URL'inde (genellikle `https://your-project-id.web.app`) kullanılabilir olacaktır.
-
-## Teknolojiler
-
-- React
-- Firebase (Authentication, Firestore, Storage, Hosting)
-- React Router
-- Tailwind CSS
-
-## Proje Yapısı
-
-```
-protesto-platformu/
-├── public/                   # Statik dosyalar
-├── src/                      # Kaynak kod
-│   ├── components/           # React bileşenleri
-│   ├── context/              # Context API dosyaları
-│   ├── firebase/             # Firebase yapılandırması
-│   ├── hooks/                # Custom React hooks
-│   ├── pages/                # Sayfa bileşenleri
-│   ├── styles/               # CSS stilleri
-│   ├── utils/                # Yardımcı fonksiyonlar
-│   ├── App.js                # Ana uygulama bileşeni
-│   └── index.js              # Uygulama giriş noktası
-├── .env                      # Ortam değişkenleri
-├── .env.example              # Örnek ortam değişkenleri
-├── .firebaserc               # Firebase proje yapılandırması
-├── firebase.json             # Firebase yapılandırma dosyası
-├── firestore.indexes.json    # Firestore indeksleri
-├── firestore.rules           # Firestore güvenlik kuralları
-├── storage.rules             # Storage güvenlik kuralları
-└── package.json              # NPM yapılandırma dosyası
-```
-
-## Katkıda Bulunma
-
-1. Bu repo'yu fork edin
-2. Kendi feature branch'inizi oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
-## Lisans
-
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# Boycott Platform
-
-A platform for creating and managing boycotts against companies or products, with features for voting and community engagement.
-
-## Setup
-
-1. Clone the repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Create a `.env` file in the root directory (based on `.env.example`) with your Firebase configuration.
-
-## Development
-
-Run the development server:
-
-```
-npm start
-```
-
-The app will be available at [http://localhost:3000](http://localhost:3000)
-
-## Deployment
-
-### Build for Production
-
-```
+# 4. Build the project
 npm run build
-```
 
-### Deploy to Firebase
+# 5. Deploy it
+firebase deploy
+Technologies Used
+JavaScript
 
-1. Install Firebase CLI if you haven't already:
-   ```
-   npm install -g firebase-tools
-   ```
+Firebase (Auth, Firestore, Storage, Hosting)
 
-2. Login to Firebase:
-   ```
-   firebase login
-   ```
+React Router
 
-3. Initialize your project (if not already done):
-   ```
-   firebase init
-   ```
-   - Select "Hosting"
-   - Select your Firebase project
-   - Set "build" as your public directory
-   - Configure as a single-page app
+Tailwind CSS
 
-4. Deploy to Firebase:
-   ```
-   firebase deploy
-   ```
+📁 Folder Structure
+pgsql
+Kopyala
+Düzenle
+protest-platform/
+├── public/
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── firebase/
+│   ├── hooks/
+│   ├── pages/
+│   ├── styles/
+│   ├── utils/
+│   ├── App.js
+│   └── index.js
+├── .env
+├── .env.example
+├── firebase.json
+├── firestore.rules
+├── storage.rules
+└── package.json
+If you wanna add something too
+# 1. Fork this repo
+# 2. Create your branch
+git checkout -b feature/something-cool
 
-## Environment Variables
+# 3. Make changes and commit
+git commit -m "Added new cool thing"
 
-Create a `.env` file with the following variables:
+# 4. Push and open a pull request
+git push origin feature/something-cool
+I’ll check it out and help if needed.
 
-```
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-REACT_APP_FIREBASE_APP_ID=your_app_id
-REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
-```
+📄 License
+This project uses the Apache 2.0 (As I know) License – see the LICENSE file for details.
+
+Thanks for checking out the project! If anything is confusing or you want to give advice, feel free to contact.
+I'm looking forward for your messages for improving myself, because I'm still learning too! 
