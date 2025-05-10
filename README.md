@@ -1,7 +1,7 @@
 # Protest & Boycott Platform
 
 Hey if you want to access website  # https://kararweb3.com/ here you go!   
-This is a simple web app where people can **share, vote, and talk about protests or boycotts**. I built it to help people come together and speak up about important topics.
+This is a simple web app where people can **create, share, and vote about protests or boycotts**. I built it to help people come together and speak up about important topics.
 
 ---
 
