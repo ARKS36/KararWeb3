@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow users to read protests
+    match /protests/{protestId} {
+      allow read: if true;
+      allow create: if false;
+      allow update: if request.auth != null && 
+                   (request.resource.data.diff(resource.data).affectedKeys()
+                   .hasOnly(['supportCount', 'oppositionCount'])) &&
+                   request.resource.data.supportCount >= 0 &&
+                   request.resource.data.oppositionCount >= 0;
+      allow delete: if false;
+    }
+    
+    // Allow authenticated users to vote
+    match /votes/{voteId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && 
+                   request.resource.data.userId == request.auth.uid &&
+                   request.resource.data.protestId is string &&
+                   request.resource.data.voteType in ['support', 'opposition'] &&
+                   !exists(/databases/$(database)/documents/votes/$(request.auth.uid + '_' + request.resource.data.protestId));
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    // Allow users to read and create reports
+    match /reports/{reportId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && 
+                   request.resource.data.userId == request.auth.uid &&
+                   request.resource.data.protestId is string &&
+                   request.resource.data.reportReason is string &&
+                   request.resource.data.createdAt is timestamp;
+      allow update, delete: if false;
+    }
+  }
+} 

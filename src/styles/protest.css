@@ -1,0 +1,579 @@
+/* Protest Kartları Stilleri */
+.protest-card {
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.protest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+.protest-card-inner {
+  position: relative;
+  width: 100%;
+}
+
+.protest-card-front {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .protest-card-front {
+    flex-direction: row;
+  }
+}
+
+/* Resim Alanı */
+.protest-image-container {
+  width: 100%;
+  min-width: 220px;
+  height: 220px;
+  overflow: hidden;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .protest-image-container {
+    width: 220px;
+    flex-shrink: 0; /* Prevent image container from shrinking */
+  }
+}
+
+.protest-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.protest-card:hover .protest-image {
+  transform: scale(1.05);
+}
+
+/* Thumbnail specific styles */
+.protest-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio while filling container */
+  object-position: center; /* Centers the image within container */
+  transition: transform 0.3s ease;
+}
+
+.protest-card:hover .protest-thumbnail {
+  transform: scale(1.05);
+}
+
+.protest-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  font-size: 72px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.protest-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+/* İçerik Alanı */
+.protest-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.protest-title {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.protest-title a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.protest-title a:hover {
+  color: var(--color-primary);
+}
+
+.protest-company {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.protest-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.protest-date {
+  display: flex;
+  align-items: center;
+}
+
+.meta-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  color: #6b7280;
+}
+
+.protest-location {
+  font-weight: 500;
+}
+
+.protest-description {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  flex-grow: 1;
+}
+
+.protest-footer {
+  margin-top: auto;
+}
+
+/* Oy Göstergeleri - Yeni ve Geliştirilmiş */
+.protest-votes {
+  margin-bottom: 1.5rem;
+}
+
+.vote-bars {
+  margin-bottom: 1rem;
+}
+
+.vote-results-container {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vote-progress {
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.vote-progress-up {
+  height: 100%;
+  background: linear-gradient(90deg, #34d399, #10b981);
+  border-radius: 6px 0 0 6px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vote-progress-down {
+  height: 100%;
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  border-radius: 0 6px 6px 0;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vote-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.vote-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.vote-count {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.vote-percent {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.vote-text {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.vote-total {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Butonlar */
+.protest-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.vote-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.vote-button span {
+  margin-left: 6px;
+}
+
+.upvote {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.upvote:hover {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.upvote.voted {
+  background-color: #10b981;
+  color: white;
+}
+
+.downvote {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.downvote:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.downvote.voted {
+  background-color: #ef4444;
+  color: white;
+}
+
+.vote-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.report-button {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-button:hover {
+  color: #f43f5e;
+  background-color: rgba(244, 63, 94, 0.1);
+}
+
+.login-required {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  padding: 8px 12px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+}
+
+.login-icon {
+  color: #6366f1;
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.read-more:hover {
+  color: var(--color-primary-dark);
+}
+
+.read-more .icon {
+  margin-left: 4px;
+  transition: transform 0.2s;
+}
+
+.read-more:hover .icon {
+  transform: translateX(2px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #9ca3af;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-body p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #4b5563;
+}
+
+.report-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+  color: #374151;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23606060'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.report-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #374151;
+  resize: vertical;
+}
+
+.report-textarea:focus, .report-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 0 0 12px 12px;
+}
+
+.modal-cancel, .modal-submit {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-cancel {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+.modal-cancel:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.modal-submit {
+  background-color: #ef4444;
+  border: 1px solid transparent;
+  color: white;
+}
+
+.modal-submit:hover {
+  background-color: #dc2626;
+}
+
+.modal-submit:disabled {
+  background-color: #f87171;
+  cursor: not-allowed;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .protest-card-front {
+    flex-direction: column;
+  }
+  
+  .protest-image-container {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .vote-labels {
+    font-size: 12px;
+  }
+  
+  .vote-count {
+    font-size: 16px;
+  }
+  
+  .protest-actions {
+    flex-wrap: wrap;
+  }
+  
+  .vote-button {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .protest-title {
+    font-size: 20px;
+  }
+  
+  .protest-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .read-more {
+    align-self: flex-start;
+  }
+  
+  .modal-container {
+    width: 95%;
+  }
+} 
